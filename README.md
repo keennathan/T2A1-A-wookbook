@@ -73,10 +73,49 @@ For Flask applications, PostgreSQL can be a powerful and flexible database optio
 * https://www.youtube.com/watch?v=Yfrrjt1ieyk
 
 # Q3 Discuss an implementation of an Agile project management methodology for an API project.
+## Kanban-Agile Methodology
+Kanban was originally developed as part of the Toyota Production System in the 1940's and has became a popular Agile Software Developement methodology.  Its key function was as a signaling device to manage the flow of parts in a 'pull' production system.  With respect to software developement, Kanban helps teams to visualise their workflow, manage work in progress(WIP), and continuously improve process through incremental changes.  
+
+![Kanban Board](docs/kanbanBoard.png)
+
+### Key Concepts and Features  
+1. **Kanban Board:**  
+    - A Kankan board is a visual tool that represents the workflow of a project.  It is divided into different columns that state different phases of the developement process, such as "To-Do", "In-Progress", and "Done".  These Tasks are represented as cards, that move across the columns as they progress through the workflow.  
+    - The board can be physical (eg. sticky notes on a whiteboard) or digital (eg. tools like Trello or Jira).  It provides a clear overview of the status of each task and helps identify where tasks might be stuck for too long.  
+2. **Pull Systems:**  
+    - Kanban operates with a pull system, which means tasks are only pulled into the workflow when there is a capacity to handle them.  The pull system helps prevent overloading team members and ensures a steady flow of work, reducing delays and improving efficiency.  
+3. **Work-In-Progress (WIP) Limits:**  
+    - One of the key practices in Kanban is to set WIP limits, this helps cap the number of tasks that can be in progress at any given time.  These limits help keep the team focused on completing tasks rather then statring new ones, which enhances productivity and reduces the likelihood of work getting stuck in the pipeline.  
+4. **Kanban Principles:**  
+    - *Start with the Existing Process:* Kanban emphasises beginning with the current process without drastic changes.  Instead, it focuses on making incremental, evolutionary improvements.  
+    - *Agree to Incremental Changes:* Teams should aim for small, manageable changes rather than large-scale overhauls, which coulsd disrupt workflow and meet resistance.  
+    - *Respect Current Roles and Responsibilities:* Kanban does not prescribe specific roles, allowing teams to maintain their current structure while gradually adoping the methodology.  
+5. **Cumulative Flow Diagram (CFD):** A CFD is an advanced Kanban tool that provides a visual representation of the workflow over time.  It shows the distribution of tasks across different stages of the process, helping teams identify trends, predict bottlenecks, and make adjustments to improve workflow stability.  
+
+### Steps of the Kanban Approach
+1. **Visualise Workflow:**  
+    - Map out the current process and define the stages of work.  Visualise these stages on a board, with tasks moving from left to right as they process.  
+2. **Establish a Pull System:**  
+    - Implement a pull system where work is only pulled into the next stage when there is the capacity to do so, preventing bottlenecks and ensuring smooth flow.  
+3. **Set WIP Limits:** 
+    - Define limits on how many tasks can be in each stage of the process at any time.  This will encourage teams to complete the tasks before starting new ones, enhancing focus and reduce mulitasking.  
+4. **Apply Pull Signals:**  
+    - Use signals to indicate when new tasks can be pulled into stage.  Such as, when a task is completed in one stage, it signals the team to pull a new task from the previous stage.  
+
+In summary, using Kanban for API developement not only streamlines the workflow and enhances team productivity but also ensures that the project is delivered efficiently, with a strong focus on quality.  The flexibility, visibility, and continuous improvement principles of Kanban make it an ideal choice for managing the complexities and fast-paced demands of API projects.  
+
+
+### References
+* https://www.youtube.com/watch?v=36Mmyi65mko
+* https://www.geeksforgeeks.org/what-is-kanban/
+* https://www.geeksforgeeks.org/kanban-agile-methodology/
+* https://hygger.io/blog/online-kanban-board/
 
 
 # Q4 Provide an overview and description of a standard source control process for an API project.
 
+
+### References
 
 
 # Q5 Provide an overview and description of a standard testing process for an API project.
