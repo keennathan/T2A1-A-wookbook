@@ -1,21 +1,21 @@
 # Q1 Describe the architecture of a typical API project, such as a Flask application.
-## Model View Controller Architecture
+# Model View Controller Architecture
 Software architecture is a way that we can describe software systematically and also refers to how different software interact with each other.  One of the most popular Software architectures is Model-View-Controller(MVC).  
 <br>  
 MVCs' design patern divides any application into three interconnected components, allowing for effecient code organisation, easier maintenance and scalability. 
 
 *MVC Architecture Diagram*  
 ![MVC Architecture Diagram](docs/MVC-diagram.png)
-### The Model  
+## The Model  
 The Model component is resposible for managing the application's data related logic, such as the schema's and interfaces of the project.  It interacts with the database to define the data structure and retrieves, manipulate and store data.  It acts as a middleman between the database and the controller.
 
-### The View
+## The View
 The View component handles the presentation part of the application with things that the user can interact with, such as text boxes, dropdowns etc.  Its primary role is to displays the data, and sends all the inputs from the user to the Controller component.  
 
-### The Controller  
+## The Controller  
 The controller component acts as the go-between for the Model and View components.  It handles and processes the user inputs then determines what data from the *model* will be displayed in the *View*.  
 
-### Benifits of MVC
+## Benifits of MVC
 The benefits of this architecture is that it separates each component making it easier to maintain and organise code by setting clear responsibilties for each.  By separating each part, it can be developed, scaled, and tested independently.  
 
 ### References 
@@ -26,10 +26,10 @@ The benefits of this architecture is that it separates each component making it 
 
 # Q2 Identify a database commonly used in an API project (such as a Flask application) and discuss the pros and cons of this database.
 
-## PostgreSQL
+# PostgreSQL
 PostgreSQL, while one of the oldest, is still one of the most advanced Relational Database Management Systems out there.  It is open source, meaning it is managed and maintained by a vibrant community of people and the source code is available to anyone under the PostgreSQL licence.  
 
-### Pros 
+## Pros 
 1. *Transactions*:  
     - PostgreSQL supports transactional DDL(Data Definition Language), which allows for complex relational applications to make schema changes and other operations in a single transaction.  With this feature it reduces the need for extensive error handling code, which simplifies developement and enhances reliability.  
 
@@ -50,7 +50,7 @@ PostgreSQL, while one of the oldest, is still one of the most advanced Relationa
 6. *Platform Compatibility*:  
     - PostgreSQL is compatible with various platforms, including Windows, Linux, and Mac. This cross-platform support makes it versatile for deployment in different environments.  
 
-### Cons
+## Cons
 
 1. *Database Structure*:  
     - PostgreSQL is predominantly a relational database, meaning it works with structured data in predefined schemas.  This can be limiting when dealing with unstructured or semi structured data, where as NoSQL databases like MongoDB might be more flexible.  
@@ -64,7 +64,7 @@ PostgreSQL, while one of the oldest, is still one of the most advanced Relationa
 4. *Complexity*:  
     - PostgreSQL can be more complex to set up and maintain because of its advanced features, especially for those who are unfamiliar with it.  This complexity might slow down developement with its learning curve for new users.  
 
-### Conculsion
+## Conculsion
 For Flask applications, PostgreSQL can be a powerful and flexible database option.  However, it might not be the best choice for projects that need rapid developement, simple setup, or working with unstructured data, where as another database type might be better suited.  
 
 ### References
@@ -73,12 +73,12 @@ For Flask applications, PostgreSQL can be a powerful and flexible database optio
 * https://www.youtube.com/watch?v=Yfrrjt1ieyk
 
 # Q3 Discuss an implementation of an Agile project management methodology for an API project.
-## Kanban-Agile Methodology
+# Kanban-Agile Methodology
 Kanban was originally developed as part of the Toyota Production System in the 1940's and has became a popular Agile Software Developement methodology.  Its key function was as a signaling device to manage the flow of parts in a 'pull' production system.  With respect to software developement, Kanban helps teams to visualise their workflow, manage work in progress(WIP), and continuously improve process through incremental changes.  
 
 ![Kanban Board](docs/kanbanBoard.png)
 
-### Key Concepts and Features  
+## Key Concepts and Features  
 1. **Kanban Board:**  
     - A Kankan board is a visual tool that represents the workflow of a project.  It is divided into different columns that state different phases of the developement process, such as "To-Do", "In-Progress", and "Done".  These Tasks are represented as cards, that move across the columns as they progress through the workflow.  
     - The board can be physical (eg. sticky notes on a whiteboard) or digital (eg. tools like Trello or Jira).  It provides a clear overview of the status of each task and helps identify where tasks might be stuck for too long.  
@@ -92,7 +92,7 @@ Kanban was originally developed as part of the Toyota Production System in the 1
     - *Respect Current Roles and Responsibilities:* Kanban does not prescribe specific roles, allowing teams to maintain their current structure while gradually adoping the methodology.  
 5. **Cumulative Flow Diagram (CFD):** A CFD is an advanced Kanban tool that provides a visual representation of the workflow over time.  It shows the distribution of tasks across different stages of the process, helping teams identify trends, predict bottlenecks, and make adjustments to improve workflow stability.  
 
-### Steps of the Kanban Approach
+## Steps of the Kanban Approach
 1. **Visualise Workflow:**  
     - Map out the current process and define the stages of work.  Visualise these stages on a board, with tasks moving from left to right as they process.  
 2. **Establish a Pull System:**  
@@ -114,9 +114,35 @@ In summary, using Kanban for API developement not only streamlines the workflow 
 
 # Q4 Provide an overview and description of a standard source control process for an API project.
 
+Source Control, or version control, is a crucial component of mordern software developement, particulary for API projects.  It involves involves managing changes to code over time, ensuring that every modification is tracked, documented, and can be reviewed.  This process allows for multiple developers to collaborate efficiently, even when they are working in different locations, and ensures that the code remains organised,secure, and recoverable.  
+
+## Key Components
+1. **Repository:**  
+    - The repository is like a database that stores all versions of the project.  It contains the complete history of all the changes made to the API's codebase, including who made the changes, when they were made, and why they were made.  The repository can be centralised (eg. with a system like Subversion) or distributed (eg. with Git).  
+2. **Branches:**  
+    - A branch is a parallel version of the code the diverges from the main repository.  In an API project, branches are typically used to develope new feature, fix bugs, or test changes without affecting the main codebase.  Developers work on their own branches and only merge their changes back into the main branch after a thorough review and testing has occured.  
+3. **Commits:**  
+    - A commit is an action that saves a snapshot of the developer's changes to the repository. Each commit includes a message describing what was changed and why, which helps in maintaining a clear historyof the project's progression.  
+4. **Pull Requests:**  
+    - When a developer wants to merge their changes from a feature branch into the main branch, they open a pull request.  This process allows the other team members to review the code, suggest improvements, or catch potential issues before the changes are integrated to the main codebase.  
+5. **Push and Pull Operations:**  
+    - In a distributed version control system, like Git, changes are first committed to the developer's local repository.  These changes are then pushed to the central repository so that they can be shared with others.  Conversely, a pull operation is used to fetch updates from the central repository into the local environment.  
+
+## Standard Source Control Workflow for an API Project 
+1. **Cloning the Repository:** Each developer clones the repository from the central repository to create a local copy on their machine.  This includes the entire history of the project and all the branches.  
+2. **Creating a New Branch:** Before making any changes, developers create a new branch from the main.  This is typically named after the feature that the developer will be working on (eg.'feature/user-auth').  
+3. **Developing and Committing Changes:** The developer will then make changes to the codebase.  Once the changes are ready, they are added to the staging area and then committed locally with a descriptive message.  
+4. **Pushing the Branch:** After committing, the developer will push the branch to the central repository.  This makes the changes available for review by the rest of the team.  
+5. **Creating a Pull Request:** The developer will then open a pull request, inviting other team members to review the changes.  The pull request should link to any relevent issues or tasks and include a detailed explanation of what has been changed.  
+6. **Code Review and Testing:** The pull request is reviewed by other developers.  They may suggest improvements or request changes.  Once the review is complete, automated test are usually run to make sure the new code does not break existing functionality.  
+7. **Merging the Branch:** Once the code has passed the review and testing stages, it is then merged into the main branch.  This step usually involves another review to ensure that the merge does not introduce conflicts.  
+8. **Deleting the Branch:** After merging, the feature branch is deleted to keep the repository clean and focused on active branches.  
+
+In summary, by implementing a standard source control process, API projects can maintain a high level of code quality, ensure seamless collaboration, and reduce the risk of errors in the production environment.
 
 ### References
-
+* https://www.atlassian.com/git/tutorials/what-is-git
+* https://www.geeksforgeeks.org/version-control-systems/
 
 # Q5 Provide an overview and description of a standard testing process for an API project.
 
