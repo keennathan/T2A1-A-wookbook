@@ -114,6 +114,8 @@ In summary, using Kanban for API developement not only streamlines the workflow 
 
 # Q4 Provide an overview and description of a standard source control process for an API project.
 
+# Source Control
+
 Source Control, or version control, is a crucial component of mordern software developement, particulary for API projects.  It involves involves managing changes to code over time, ensuring that every modification is tracked, documented, and can be reviewed.  This process allows for multiple developers to collaborate efficiently, even when they are working in different locations, and ensures that the code remains organised,secure, and recoverable.  
 
 ## Key Components
@@ -146,6 +148,32 @@ In summary, by implementing a standard source control process, API projects can 
 
 # Q5 Provide an overview and description of a standard testing process for an API project.
 
+# API Testing
+API testing is a crucial component of software testing, it ensures the API functions as intended, providing reliable, secure and effient communication between the different software components.  While UI testing focuses on the look and feel of an application, API testing centers on the backend, notably the business logic, security, and the data response mechanisms.  
+
+# API Testing Process
+## 1. Define the Scope and Requirements
+When beginning the API testing process, it is essential to define the scope and understanding of the API.  It is key to have a comprehensive understanding of how the API should function and what business logic it handles.  This requires identifying all the API endpoints that need to be tested, which includes the methods (such as GET, POST, PUT, DELETE) and the parameters that are associated with each.  It is also a good idea to define the expected HTTP response codes for both successful and unsuccessful requests, along with the corresponding error messages.  
+
+## 2. Test Case Development
+After the scope is defined, the next step involves developing test cases that will cover a wide range of scenarios, includeing normal, boundary and error conditions.  Each test case should specify input conditions, expected results and actual results to allow for thorough testing.  It is also important to include tests that will measure performance, such as response times and data integrity checks, and tests that validate authorisation and error handling.  Non-function features, like the API's ability to perform well under load, maintain security and operate reliably should aslo be tested.  
+
+## 3. Execution of Test Cases
+When the test cases are developed, execution of these tests can begin.  Automated testing tools like Postman, Insomnia or SoapUI are typically used to send requests to the API and validate the responses with the expected results.  These tests are particularly valuable in Agile environments, where continuous testing and fast feedback are essential.  However, manual testing still plays a part, especially for exploratory testingof areas not covered by automated scripts.  Manual tests are useful for newly introduced features that require a more-hands on aproach.  
+
+## 4. Evaluation and Reporting
+After executing the tests,  the results need to be thoroughly analyzed.  This involves comparing the actual results with the expected outcomes and identify any discrepancies.  If there are any failures, errors, or unexpected behaviors they should be logged and investigated further.  Performance and load texting are especially important at this stage to assess how well the API will handle increased loads and stress conditions.  Additionally, security validation is essential to check for vulnerabilities.  
+
+## 5. Bug Fixing and Retesting
+Once the issues are identifyed, they need to be tackled through a bug-fixing process.  Developers work on the bugs, and once they are fixed, the API is then retested to ensure the issues are resolved.  This step often includes testing to ensure that the new changes have not introduced new bugs or negatively impacted other parts of the API.  Continuous retesting help maintain the stability of the API as it evolves.  
+
+## In Summary
+By following these steps, developers can ensure that the API's are not only functional and reliable but also secure and efficient, which ultiately lead to higher qualtity software and improve customer satisfaction.  
+
+### References
+* https://testsigma.com/guides/api-testing/
+* https://caisy.io/blog/api-testing-for-developers
+* https://www.techtarget.com/searchapparchitecture/definition/API-testing
 
 # Q6 Explain the three principles of information system security.
 
