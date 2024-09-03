@@ -177,7 +177,23 @@ By following these steps, developers can ensure that the API's are not only func
 
 # Q6 Explain the three principles of information system security.
 
+# Principles of Information System Security 
+The three fundamental principles of information system security, also known as the *CIA triad*, are know as *Confidentiality, Integrity, and Availability*.  
+![Principles of Information System Security](docs/PrinciplesSecurity.png)
 
+# Confidentiality 
+The confidentiality principle ensures that only those who have been authorised to access information can access it.  Confidentiality is a must in preventing unauthorised access to sensitive information, whether that be by implementing access control measures or by ensuring that data is being encrypted.  For example, a business's administration must not allowed access to employees private and sensitive information.  
+
+# Integrity 
+The principle of Integrity involves maintaining the accuracy and completeness of data.  This ensures that no information is altered in any unauthorised way, and that any changes to the data are made only by authorised personnel.  Techniques such as checksum and version control are often used to maintain data integrity by ensuring the information remains reliable and unaltered.  This will also ensure data is protected and not deleted, destroyed or lost.  
+
+# Availability  
+Availability means that resources and information are readily accessible to authorised users when needed.  This principle focuses more on the reliability and timely access to data and systems, which is key for business operations.  Implementing plans for regular maintenance and disaster recovery are commin practices to ensure availability.  
+
+### References  
+* https://blog.rsisecurity.com/what-are-the-top-three-principles-of-information-security/
+* https://www.geeksforgeeks.org/principle-of-information-system-security/
+* https://www.youtube.com/watch?v=tHgn2rhqChg 
 
 # Q7 Provide an overview of what would need to be done within an API project to implement at least one of the principles explained in Question 6.
 
