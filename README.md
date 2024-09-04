@@ -197,11 +197,82 @@ Availability means that resources and information are readily accessible to auth
 
 # Q7 Provide an overview of what would need to be done within an API project to implement at least one of the principles explained in Question 6.
 
+# Implementing Confidentiality Principle in an API Project
 
+## Authentication
+Authentication is the process of confirming the identity of a user or system that is attempting to access the API.  Without effective authentication, the API would be vulnerable to unauthorised access and potential misuse.  
+1. **Basic Authentication:** 
+    - A simple method where the client sends the username and password, which are sent as Base64-encoded credentials in the header of the HTTP, with every request.  However this is not recommended due to security concerns, as senitive data would be transmitted as plain text.   
+* **Example:** 
+
+
+
+2. **Token-Based Authentication:**  
+    * Token-based authentication is a technique where users or applications are given tokens after successfully verifying their identity with a system. These tokens are used to access secured resources or execute actions on behalf of the authenticated user. This method offers greater security and scalability compared to traditional username/password authentication, as it avoids the need to send sensitive credentials with every request.  
+    * **How it works:**  
+        1. *User Authentication:* The process starts with authenticating the user, where the user logs in using their password and username.  The server then verifies these credentials.  Once comfirmed, the server creates a token linked to the user.  
+        2. *Token Generation:* The server will then produce a token that includes details about the user, such as thier user ID and roles. This token is signed with a secret or private key,ensuring its integrity and authenticity. To enhance security, the token may also have an expiration time.  
+        3. *Token Issuance:* After generating the token, the server sends it to the client. The client securely stores the token, typically in local storage,a cookie , or a mobile app’s secure storage.  
+        4. *Token Usage:* For each request to the protected API endpoints, the client includes the token in the HTTP headers. The server then validates the token by checking its signature, expiration, and any claims within it.  
+        5. *Access Control:* Once the token is validated, the server either grants or denies access to the requested resource based on the user’s identity and, if applicable, their roles or permissions.  
+        6. *Token Expiry:* If the token has an expiration time and it expires, the client needs to re-authenticate with the server to obtain a new token.  
+
+## Authorisation
+Authentication verifies a user's identity, but it doesn't dictate their permissions. Authorisation, however, defines the actions a user is permitted to take once their identity has been authenticated.  
+* **Role-Based Access Control (RBAC):**  
+    - Role-Based Access Control (RBAC) is a widely used method for managing authorisation. This approach organises users into roles, with each role assigned a specific set of permissions. By using RBAC, you can regulate which users are allowed to carry out particular actions within your API.
+![Role-Based Access Control Picture](docs/RBAC.png)
+
+
+### References
+* https://medium.com/@satyendra.jaiswal/securing-restful-apis-authentication-and-authorization-8194c982f12f
+* https://www.okta.com/identity-101/what-is-role-based-access-control-rbac/
 
 # Q8 Explain the legal obligations that developers of a social media website or social media application would have in regards to handling user data, with reference to any applicable laws or acts.
 
+Developers of a social media website or application have several obligations regarding the handling of user data.  These obligations are primarily shaped by laws and regulations that focus on data privacy, security, and the rights of users. Down below are a list of these obligations, and reference to the appicable laws:  
 
+1. **Transparency in Data Collection and Handling:**  
+    - *Australian Privacy Principle (APP) 1 - Open and Transparent Management*   
+    Developers must maintain a transparent and open approach in handling personal data.  This includes creating a clear and up-to-date **Privacy Policy** that details what types of personal information are collected, how it is collected, the purposes for its use, and how the users can access, correct, or complain about breaches related to the use of thier data.  This aligns with other laws such as the **General Data Protection Regulation (GDPR)** in the EU, that mandates transparency in data handling.  
+2. **Consent for Data Collection:**  
+    - *APP 3 - Collection of Personal Information*  
+    Personal information must only be collected if it is necessary for the funtion of the application.  Sensitive information can only be collected with explicit consent.  If developers plan to collect sensitive data such as health information, they must ensure that consent is obtained first.  
+3. **Anonymity and Pseudonymity Options:** 
+    - *APP 2 - Anonymity and Pseudonymity*  
+    Users have to be given the option to interact with the platform anonymously or by using a pseudonym unless it impractical for the app to function without knowing the user's identity or it is legally required for indentification.  This supports user privacy and limits the exposure of the personal details.  
+4. **Fair and Lawful Collection of Data:**  
+    - *APP 3.5 - Lawful Collection*  
+    Data collection must be carried out in a lawful and fair manner.  The GDPR, in the EU, also stresses that personal data must be collected for legitimate purposes, and should not be processed futher in a manner unsuitable with these purposes.  
+5. **Handling Unsolicited Personal Information:**  
+    - *APP 4 - Unsolicited Data*  
+    If a developer recieves any unsolicited personal information, such as information they did not request from the user, they must assess whether or not they could have collected the data lawfully.  If not, the data has to be destroyed or de-identified.  
+6. **User Notification:**  
+    - *APP 5 - Notification of Data Collection*  
+    As with the GDPR, developers must inform users about the collection,purpose, and potential recipients of thier personal data either at the time of data collection, or as soon as possible.  
+7. **Use and Disclosure of Data:**  
+    - *APP 6 - Purpose Limitation for Data Use*  
+    Unless the user consents or other legal exceptions apply, personal data collected for a specific purpose(like account creation) must not be used for a second purpose(like marketing).  
+8. **Cross-Border Disclosure:**  
+    - *APP 8 - Cross-border Disclosure of Personal Information*  
+    If a users personal information is transferred to a foreign country, developers must take steps to ensure the recipient complies with privacy protections that are similar to ours.  This aligns with GDPR's data tranfer restrictions which ensures data sent outside the EU is protected by sufficient privacy standards.  
+9. **Data Security:**  
+    - *APP 11 - Security of Personal Information*  
+    Developers must take reasonable steps to protect personal information from interference, loss, misuse, unauthorised access, modification, or disclosure.  When data is no longer needed, they must ensure its secure deletion.  This is also mirrored in the GDPR to safeguard data.  
+10. **Access and Correction Rights:**  
+    - *APP 12 and 13 - Access to and Correction of Personal Information*  
+    Users have the right, on a social media platform, to access thier personal information and request corrections if the data is inaccurate, outdated, or misleading.  
+11. **Direct Marketing Restrictions:**  
+    - *APP 7 - Direct Marketing*  
+    Developers cannot use personal data for direct marketing without the user's consent unless there is a specific condition applying.   
+By adhering to these principles, developers ensure that their social media applications comply with relevant legal frameworks, protecting user privacy and avoiding potential legal liabilities. For companies operating globally, compliance with regional laws like the Australian Privacy Principles and GDPR is crucial.  
+
+
+
+### References
+* https://www.oaic.gov.au/privacy/privacy-legislation/the-privacy-act  
+* https://www.oaic.gov.au/privacy/australian-privacy-principles/read-the-australian-privacy-principles
+* https://www.dataguidance.com/sites/default/files/gdpr_v_australia_update_2022.pdf#:~:text=Given%20the%20Australian%20practice%20of%20using%20the%20Australian%20Privacy%20Principle
 
 # Q9 Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.
 
