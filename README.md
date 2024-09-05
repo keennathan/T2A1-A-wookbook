@@ -275,7 +275,41 @@ By adhering to these principles, developers ensure that their social media appli
 * https://www.dataguidance.com/sites/default/files/gdpr_v_australia_update_2022.pdf#:~:text=Given%20the%20Australian%20practice%20of%20using%20the%20Australian%20Privacy%20Principle
 
 # Q9 Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.
+# Relational Database Model 
+Originally proposed by E.F. Codd, the relational database model is a widely used data model that organises data into **tables**(also known as relations), that represent both the data and the relationships between data.  This model is the foundation for most modern database systems such as Oracle, MySQL, and SQL Server.  The structural aspects of a relational database include several key components and constraints that define how data is stored and related.  
 
+## Key Structural Aspects:  
+1. **Tables (Relations):**  
+    - *Data Representation:* In a relational database, data is stored in tables, which are essentially collections of related data.  Each table is structured into rows and colunms.  
+    - *Rows (Tuples):* Each row in a table represents a single record, often referred to as a tuple.  For example, in a **STUDENT** table, each row might represent a different student.  
+    - *Columns (Attributes):* Each column in a table represents an attribute, which defines a specific property of the data.  For example, in the **STUDENT** table, colunms might contain attributes like **ROLL_NO**, **NAME**, **ADDRESS**, **PHONE** and **AGE**.  Each of these columns has a specified Data type, like **VARCHAR** for text, or **INTEGER** for numbers, this ensures data consistency.  
+    - *Relation Schema:* The structure of the table, which includes the table name and all of its attributes, is called the relation schema.  For example, the schema for the **STUDENT** table would be **STUDENT (ROLL_NO, NAME, ADDRESS, PHONE, AGE)**.  
+2. **Keys:**  
+    - *Primary Key:* A primary key is a column(or combination of colomns) that uniquely identifies each row in a table.  Like in the example, **ROLL_NO** in the **STUDENT** table serves as the primary key.  This that every student has a unique identifier, which prevents duplicate records.  
+    - *Foreign Key:* A foreign key is a feild in the table that references the primary key in another table, thus creating a relationship between the two tables.  This enforces referential integrity, that ensures a record in the child table(e.g. **STUDENT**), relates to an existing record in the parent table(E.G. **COURSE**).  
+3. **Relations:**  
+    - Relationships between tables are established using primary keys and foreign keys, this ensures data is connected logically.  For instance, a **STUDENT** table may have a foreign key column **COURSE_CODE** that refers to the **COURSE_CODE** in a **COURSE** table.  This enforces the rule that ecery student is assigned a valid course.  
+4. **Structural Constraints:**  
+    - *Cardinality Ratios:* These define the number of entities in one table that can be associated with entities in another table.  Some common types of cardinality include:  
+        - _One-to-One (1:1):_ Each row in one table relates to a single row in another table.  
+        - _One-to-Many (1:N):_ A row in one table can relate to multiple rows in another table.  
+        - _Many-to-One (N:1):_ Multiple rows in one table relate to a single row in another table.  
+        - _Many-to-Many (N:N):_ Multiple rows in both tables can be related to multiple rows in the other table.  
+    - *Participation Constraints:* These define whether an entitiy in a table must participate in a relationship.  Total participation means every entity must be part of a relationship, while partial participation means not all entities have to participate.  
+5. **Null Values:** 
+    - Columns in a table can have **NULL** values, that represent missing or unknown data.  For example, if a student's phone number is not available, the **PHONE** attribute in the **STUDENT** table could have a **NULL** value.  However, Primary key fields cannot be **NULL**, as they have to uniquely identify each row.
+## Entiy Diagram Example 
+![Entiy Diagram Example](<docs/ExampleER-Diagram.drawio (1).png>)  
+
+## In Summary 
+The relational database model uses tables to store data, with primary keys and foreign keys establishing relationships between tables. Structural constraints such as cardinality ratios and participation constraints ensure that the database maintains integrity, consistency, and accurate representation of relationships between entities. These features make the relational model both flexible and powerful for managing complex data sets efficiently.
+
+
+
+### References
+* https://sql-academy.org/en/guide/structure-of-relation-databases
+* https://www.geeksforgeeks.org/relational-model-in-dbms/
+* https://www.geeksforgeeks.org/structural-constraints-of-relationships-in-er-model/
 
 
 # Q10 Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
